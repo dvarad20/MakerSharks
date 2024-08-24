@@ -37,6 +37,43 @@ This project is a proof of concept (POC) for the Makersharks search API. The API
 
 ### Cloning the Repository
 
+## Installation
+
+Clone the Repository:
+```bash
+  https://github.com/Aadarshprajapati777/Makersharks
+  cd Makersharks
+
+```
+Build and Run the Application:
+```bash
+ mvn spring-boot:run                     
+```
+
+Access Swagger Documentation:
+```bash
+http://localhost:8080/swagger-ui.html
+```
+## Testing
+```bash
+./mvnw test
+```
+
+## Contact
+Mail to:
+```bash
+geekaadarsh.dev@gmail.com
+```
+for any kind of information.
+
+## Configuration
+
+```bash
+cd src/main/resources/application.properties
+Setup postgres Configuration
+```
+Replace the Postgres Configuration with your own or mail to get the password.
+
 git clone https://github.com/your-username/makersharks-search-api.git
 cd makersharks-search-api
 
