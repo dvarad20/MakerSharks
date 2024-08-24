@@ -59,12 +59,6 @@ http://localhost:8080/swagger-ui.html
 ./mvnw test
 ```
 
-## Contact
-Mail to:
-```bash
-geekaadarsh.dev@gmail.com
-```
-for any kind of information.
 
 ## Configuration
 
@@ -74,16 +68,6 @@ Setup postgres Configuration
 ```
 Replace the Postgres Configuration with your own or mail to get the password.
 
-git clone https://github.com/your-username/makersharks-search-api.git
-cd makersharks-search-api
-
-Building the Application
-To build the application, use Maven:
-mvn clean install
-
-Running the Application
-You can run the application using Maven or directly from your IDE:
-mvn spring-boot:run
 
 Accessing the API
 Once the application is running, the API will be available at http://localhost:8080.
@@ -102,25 +86,30 @@ manufacturingProcesses: The manufacturing processes the manufacturer can perform
 Example Request:
 
 
-curl -X POST "http://localhost:8080/api/supplier/query?location=India&natureOfBusiness=small_scale&manufacturingProcesses=3d_printing"
-Example Response:
+```bash
+curl -X 'POST' \
+  'http://localhost:8080/api/v1/supplier/create' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "company_name": "Example Co.",
+  "website": "example.com",
+  "location": "India",
+  "nature_of_business": "small_scale",
+  "manufacturing_processes": "3d_printing"
+}'
+```
 
-[
-  {
-    "supplierId": 1,
-    "companyName": "Example Company",
-    "website": "http://example.com",
-    "location": "India",
-    "natureOfBusiness": "small_scale",
-    "manufacturingProcesses": "3d_printing"
-  }
-]
 Accessing Swagger Documentation
 The API documentation can be accessed at http://localhost:8080/swagger-ui.html or http://localhost:8080/swagger-ui/index.html after starting the application.
 
 Running Tests
 You can run the unit tests using Maven:
+
+```bash
 mvn test
+```
+
 Security
 The application uses basic authentication for simplicity. For production, consider using OAuth2 or JWT tokens for more secure authentication and authorization mechanisms.
 
